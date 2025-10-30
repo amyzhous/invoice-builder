@@ -18,7 +18,7 @@ export default function InvoiceBuilder() {
     email: ''
   });
   const [items, setItems] = useState([
-    { account: '', description: '', time: '', rate: 55, amount: 0 }
+    { account: '', description: '', link: '', emoji: '🔗', time: '', rate: 55, amount: 0 }
   ]);
   const [taxRate, setTaxRate] = useState(0);
 
@@ -29,7 +29,7 @@ export default function InvoiceBuilder() {
   };
 
   const addItem = () => {
-    setItems([...items, { account: '', description: '', time: '', rate: 55, amount: 0 }]);
+    setItems([...items, { account: '', description: '', link: '', emoji: '🔗', time: '', rate: 55, amount: 0 }]);
   };
 
   const removeItem = (index) => {
@@ -198,8 +198,25 @@ export default function InvoiceBuilder() {
                       value={item.description}
                       onChange={(e) => updateItem(index, 'description', e.target.value)}
                       placeholder="Description"
-                      className="w-full px-2 py-1 border rounded focus:ring-2 focus:ring-blue-500 print:border-0 print:p-0"
+                      className="w-full px-2 py-1 mb-2 border rounded focus:ring-2 focus:ring-blue-500 print:border-0 print:p-0"
                     />
+                    <div className="flex items-center gap-2">
+                      <input
+                        type="text"
+                        value={item.emoji}
+                        onChange={(e) => updateItem(index, 'emoji', e.target.value)}
+                        placeholder="🔗"
+                        className="w-10 px-2 py-1 border rounded text-center focus:ring-2 focus:ring-blue-500 print:border-0 print:p-0"
+                        maxLength={2}
+                      />
+                      <input
+                        type="text"
+                        value={item.link}
+                        onChange={(e) => updateItem(index, 'link', e.target.value)}
+                        placeholder="Link URL (optional)"
+                        className="flex-1 px-2 py-1 border rounded text-sm focus:ring-2 focus:ring-blue-500 print:border-0 print:p-0"
+                      />
+                    </div>
                   </td>
                   <td className="py-3 px-2">
                     <input
