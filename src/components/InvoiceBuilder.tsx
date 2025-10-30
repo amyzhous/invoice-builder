@@ -183,7 +183,7 @@ export default function InvoiceBuilder() {
             <tbody>
               {items.map((item, index) => (
                 <tr key={index} className="border-b border-gray-200">
-                  <td className="py-3 px-2">
+                  <td className="py-3 px-2 align-top">
                     <input
                       type="text"
                       value={item.account}
@@ -192,7 +192,7 @@ export default function InvoiceBuilder() {
                       className="w-full px-2 py-1 border rounded focus:ring-2 focus:ring-blue-500 print:border-0 print:p-0"
                     />
                   </td>
-                  <td className="py-3 px-2">
+                  <td className="py-3 px-2 align-top">
                     <input
                       type="text"
                       value={item.description}
@@ -218,7 +218,7 @@ export default function InvoiceBuilder() {
                       />
                     </div>
                   </td>
-                  <td className="py-3 px-2">
+                  <td className="py-3 px-2 align-top">
                     <input
                       type="number"
                       step="0.01"
@@ -228,7 +228,7 @@ export default function InvoiceBuilder() {
                       className="w-full px-2 py-1 border rounded text-right focus:ring-2 focus:ring-blue-500 print:border-0 print:p-0"
                     />
                   </td>
-                  <td className="py-3 px-2">
+                  <td className="py-3 px-2 align-top">
                     <input
                       type="number"
                       step="0.01"
@@ -238,10 +238,10 @@ export default function InvoiceBuilder() {
                       className="w-full px-2 py-1 border rounded text-right focus:ring-2 focus:ring-blue-500 print:border-0 print:p-0"
                     />
                   </td>
-                  <td className="py-3 px-2 text-right font-semibold">
+                  <td className="py-3 px-2 align-top text-right font-semibold">
                     ${item.amount}
                   </td>
-                  <td className="py-3 px-2 print:hidden">
+                  <td className="py-3 px-2 align-top print:hidden">
                     {items.length > 1 && (
                       <button
                         onClick={() => removeItem(index)}
